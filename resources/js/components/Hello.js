@@ -1,26 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader'; // ←追記
 
-export default class Hello extends Component {
-    render() {
-        const date = new Date();
-        const hours = date.getHours();
-        let text = '';
+ReactDOM.render(
+    <AppContainer>
+        <div>
+            <p>fuck. you</p>
+        </div>
+    </AppContainer>
+    , document.getElementById("content")
+)
 
-        if(hours >= 18 || hours <= 4) {
-            text = 'こんばんは！';
-        } else if(hours >= 12) {
-            text = 'こんにちは！';
-        } else {
-            text = 'おはよう！';
-        }
-
-        return (
-            <h1>{text}</h1>
-        );
-    }
-}
-
-if(document.getElementById('hello')) {
-    ReactDOM.render(<Hello />, document.getElementById('hello'));
+// ↓追記
+if (module.hot) {
+    module.hot.accept();
 }
