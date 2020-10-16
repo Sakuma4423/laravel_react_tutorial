@@ -11,6 +11,19 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.ts('resources/ts/App.tsx', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .version();
+mix
+  .browserSync({
+    proxy: '192.168.99.100',
+    open: false,
+    files: ['resource/**/*'],
+    watchOptions: {
+      usePolling: true,
+      interval: 500,
+    },
+  })
+  .options({
+    processCssUrls: false,
+  })
+  .ts('resources/ts/App.tsx', 'public/js')
+  .sass('resources/sass/app.scss', 'public/css')
+  .version();

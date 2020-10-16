@@ -25395,6 +25395,41 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+function _interopDefault(e){return e&&"object"==typeof e&&"default"in e?e.default:e}Object.defineProperty(exports,"__esModule",{value:!0});var React=_interopDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));function AppContainer(e){return AppContainer.warnAboutHMRDisabled&&(AppContainer.warnAboutHMRDisabled=!0,console.error("React-Hot-Loader: misconfiguration detected, using production version in non-production environment."),console.error("React-Hot-Loader: Hot Module Replacement is not enabled.")),React.Children.only(e.children)}AppContainer.warnAboutHMRDisabled=!1;var hot=function e(){return e.shouldWrapWithAppContainer?function(e){return function(n){return React.createElement(AppContainer,null,React.createElement(e,n))}}:function(e){return e}};hot.shouldWrapWithAppContainer=!1;var areComponentsEqual=function(e,n){return e===n},setConfig=function(){},cold=function(e){return e},configureComponent=function(){};exports.AppContainer=AppContainer,exports.hot=hot,exports.areComponentsEqual=areComponentsEqual,exports.setConfig=setConfig,exports.cold=cold,exports.configureComponent=configureComponent;
+
+
+/***/ }),
+
+/***/ "./node_modules/react-hot-loader/index.js":
+/*!************************************************!*\
+  !*** ./node_modules/react-hot-loader/index.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if (false) {} else if (false) {} else if (typeof window === 'undefined') {
+  // this is just server environment
+  module.exports = __webpack_require__(/*! ./dist/react-hot-loader.production.min.js */ "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js");
+} else if (true) {
+  module.exports = __webpack_require__(/*! ./dist/react-hot-loader.production.min.js */ "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js");
+  module.exports.AppContainer.warnAboutHMRDisabled = true;
+  module.exports.hot.shouldWrapWithAppContainer = true;
+} else { var jsFeaturesPresent, evalError, evalAllowed; }
+
+
+/***/ }),
+
 /***/ "./node_modules/react/cjs/react.development.js":
 /*!*****************************************************!*\
   !*** ./node_modules/react/cjs/react.development.js ***!
@@ -28621,223 +28656,23 @@ if (false) {} else {
 
 "use strict";
 
-// TODOアプリのエントリーポイント
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"));
-var TaskInput_1 = __importDefault(__webpack_require__(/*! ./components/TaskInput */ "./resources/ts/components/TaskInput.tsx")); // 入力欄
-var TaskList_1 = __importDefault(__webpack_require__(/*! ./components/TaskList */ "./resources/ts/components/TaskList.tsx")); // タスクリスト
-// タスクの初期値(Task型の配列)
-var initialState = [
-    {
-        id: 2,
-        title: '次にやるやつ',
-        done: false,
-    },
-    {
-        id: 1,
-        title: '初めにやるやつ',
-        done: true,
-    },
-];
+var react_hot_loader_1 = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js");
 // React Functional Component型のエントリーポイント
 var App = function () {
-    // useState（タスク、Task型の配列、初期値は上のやつ）
-    var _a = react_1.useState(initialState), tasks = _a[0], setTasks = _a[1];
-    return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(TaskInput_1.default, { setTasks: setTasks, tasks: tasks }),
-        react_1.default.createElement(TaskList_1.default, { setTasks: setTasks, tasks: tasks })));
+    return (react_1.default.createElement(react_hot_loader_1.AppContainer, null,
+        react_1.default.createElement("div", null,
+            react_1.default.createElement("p", null, "Hello hogehgoe"))));
 };
-// 描画部分
+// 描画部分;
 if (document.getElementById('root')) {
     react_dom_1.default.render(react_1.default.createElement(App, null), document.getElementById('root'));
 }
-
-
-/***/ }),
-
-/***/ "./resources/ts/components/TaskInput.tsx":
-/*!***********************************************!*\
-  !*** ./resources/ts/components/TaskInput.tsx ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-// TODOアプリのタスク入力欄
-var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-// タスク入力欄
-var TaskInput = function (_a) {
-    var setTasks = _a.setTasks, tasks = _a.tasks;
-    // useState（タイトル、文字列型、初期値空文字）
-    var _b = react_1.useState(''), inputTitle = _b[0], setInputTitle = _b[1];
-    // useState（タスク数のカウント、数値型、初期値はタスク数 + 1）
-    // Why：何で +1
-    // Ans：taskidを必ず1からでスタートしたいから
-    var _c = react_1.useState(tasks.length + 1), count = _c[0], setCount = _c[1];
-    // タイトル入力欄のイベントハンドラ（チェンジイベント）
-    var handleInputChange = function (e) {
-        // イベント発生したinputの値をsetInputTitleを通してinputTitleに格納
-        setInputTitle(e.target.value);
-    };
-    // 追加ボタン押下時のイベントハンドラ（クリックイベント）
-    var handleSubmit = function () {
-        // countの値を現在の値 + 1する
-        setCount(count + 1);
-        // 新規タスク(Task型)
-        var newTask = {
-            id: count,
-            title: inputTitle,
-            done: false,
-        };
-        // 既存タスクに新規タスクを追加、
-        setTasks(__spreadArrays([newTask], tasks));
-        // 追加時、タスク入力欄の値を空にする
-        setInputTitle('');
-    };
-    return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { className: "inputForm" },
-            react_1.default.createElement("div", { className: "inner" },
-                react_1.default.createElement("input", { type: "text", className: "input", value: inputTitle, onChange: handleInputChange }),
-                react_1.default.createElement("button", { onClick: handleSubmit, className: "btn is-primary" }, "\u8FFD\u52A0")))));
-};
-exports.default = TaskInput;
-
-
-/***/ }),
-
-/***/ "./resources/ts/components/TaskItem.tsx":
-/*!**********************************************!*\
-  !*** ./resources/ts/components/TaskItem.tsx ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-// 各タスク
-var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-// 各タスク
-var TaskItem = function (_a) {
-    var task = _a.task, handleDone = _a.handleDone, handleDelete = _a.handleDelete;
-    return (react_1.default.createElement("li", { className: task.done ? 'done' : '' },
-        react_1.default.createElement("label", null,
-            react_1.default.createElement("input", { type: "checkbox", className: "checkbox-input", 
-                // チェックボックスクリック時のイベントハンドラ
-                onClick: function () { return handleDone(task); }, defaultChecked: task.done }),
-            react_1.default.createElement("span", { className: "checkbox-label" }, task.title)),
-        react_1.default.createElement("button", { onClick: function () { return handleDelete(task); }, className: "btn is-delete" }, "\u524A\u9664")));
-};
-exports.default = TaskItem;
-
-
-/***/ }),
-
-/***/ "./resources/ts/components/TaskList.tsx":
-/*!**********************************************!*\
-  !*** ./resources/ts/components/TaskList.tsx ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-// TODOアプリのタスク一覧
-var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-var TaskItem_1 = __importDefault(__webpack_require__(/*! ./TaskItem */ "./resources/ts/components/TaskItem.tsx"));
-// タスク一覧
-var TaskList = function (_a) {
-    var setTasks = _a.setTasks, tasks = _a.tasks;
-    var handleDone = function (task) {
-        setTasks(function (prev) {
-            return prev.map(function (t) {
-                if (t.id === task.id) {
-                    console.log(prev);
-                    console.log(t);
-                    return __assign(__assign({}, task), { done: !task.done });
-                }
-                else {
-                    console.log(t);
-                    return t;
-                }
-            });
-        });
-    };
-    var handleDelete = function (task) {
-        setTasks(function (prev) { return prev.filter(function (t) { return t.id !== task.id; }); });
-    };
-    return (react_1.default.createElement("div", { className: "inner" }, tasks.length <= 0 ? ('登録されたTODOはありません。') : (react_1.default.createElement("ul", { className: "task-list" }, tasks.map(function (task) { return (react_1.default.createElement(TaskItem_1.default, { key: task.id, task: task, handleDelete: handleDelete, handleDone: handleDone })); })))));
-};
-exports.default = TaskList;
 
 
 /***/ }),
@@ -28849,8 +28684,8 @@ exports.default = TaskList;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/resources/ts/App.tsx */"./resources/ts/App.tsx");
-module.exports = __webpack_require__(/*! /var/www/html/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\sakuma\Documents\laravel_react_tutorial\resources\ts\App.tsx */"./resources/ts/App.tsx");
+module.exports = __webpack_require__(/*! C:\Users\sakuma\Documents\laravel_react_tutorial\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
